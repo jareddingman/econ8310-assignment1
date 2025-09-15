@@ -1,5 +1,5 @@
 import pandas as pd
-from statsmodels.tsa.api import ExponentialSmoothing
+from statsmodels.tsa.api import ExponentialSmoothing as ES
 from statsmodels.tsa.api import SimpleExpSmoothing
 import numpy as np
 
@@ -17,10 +17,10 @@ alpha020 = SimpleExpSmoothing(dfRides).fit(
 level2 = alpha020.forecast(1)
 print(level2)
 
-model = ExponentialSmoothing(dfRides).fit(
+model = ES(dfRides).fit(
                     optimized=True)
 
-modelFit = ExponentialSmoothing(dfRides,  
+modelFit = ES(dfRides,  
             seasonal='add', 
             seasonal_periods=24,
             ).fit()
