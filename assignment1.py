@@ -17,13 +17,13 @@ alpha020 = SimpleExpSmoothing(dfRides).fit(
 level2 = alpha020.forecast(1)
 print(level2)
 
-model = ES(dfRides).fit(
-                    optimized=True)
+model = ES(dfRides)
 
 modelFit = ES(dfRides,  
             seasonal='add', 
             seasonal_periods=24,
-            ).fit()
+            ).fit(
+                optimized=True)
 
 
 pred = modelFit.forecast(744)
