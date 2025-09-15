@@ -17,13 +17,14 @@ alpha020 = SimpleExpSmoothing(dfRides).fit(
 level2 = alpha020.forecast(1)
 print(level2)
 
-model = SimpleExpSmoothing(dfRides).fit(
+model = ExponentialSmoothing(dfRides).fit(
                     optimized=True)
 
 modelFit = ExponentialSmoothing(dfRides,  
             seasonal='add', 
             seasonal_periods=24,
             ).fit()
+
 
 pred = modelFit.forecast(744)
 import pandas as pd
@@ -45,7 +46,7 @@ alpha020 = SimpleExpSmoothing(dfRides).fit(
 level2 = alpha020.forecast(1)
 print(level2)
 
-model = SimpleExpSmoothing(dfRides).fit(
+model = ExponentialSmoothing(dfRides).fit(
                     optimized=True)
 
 modelFit = ExponentialSmoothing(dfRides,  
