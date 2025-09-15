@@ -21,4 +21,4 @@ modelFit = ES(dfRides,
                 optimized=True)
 
 
-pred = modelFit.forecast(744)
+pred = modelFit.forecast(744).to_numpy()
